@@ -31,20 +31,22 @@
 
         background:
             /* vertical + horizontal lines */
-            conic-gradient(from 90deg at var(--l) var(--l), 
-                transparent 25%, var(--c) 0%) 
+            conic-gradient(from 90deg at var(--l) var(--l),
+            transparent 25%, var(--c) 0%) 
             calc(-1 * var(--o)) calc(-1 * var(--o)) / var(--d) var(--d),
 
             /* main diagonal */
-            linear-gradient(45deg, 
-                transparent calc(50% - var(--o)), 
-                var(--c) 0 calc(50% + var(--o)), transparent 0) 
+            linear-gradient(45deg,
+            transparent calc(50% - var(--o)),
+            var(--c) 0 calc(50% + var(--o)),
+            transparent 0)
             0 0 / calc(2 * var(--d)) calc(2 * var(--d)),
 
             /* secondary diagonal */
-            linear-gradient(-45deg, 
-                transparent calc(50% - var(--o)), 
-                var(--c) 0 calc(50% + var(--o)), transparent 0) 
+            linear-gradient(-45deg,
+            transparent calc(50% - var(--o)),
+            var(--c) 0 calc(50% + var(--o)),
+            transparent 0)
             0 0 / calc(2 * var(--d)) calc(2 * var(--d));
     }
 
