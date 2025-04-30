@@ -308,6 +308,15 @@
     budgetSelect.addEventListener('change', update);
     percentRange.addEventListener('change', update);
   </script>
+  <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+  <script>
+    kofiWidgetOverlay.draw('boboter', {
+      'type': 'floating-chat',
+      'floating-chat.donateButton.text': 'Tip Me',
+      'floating-chat.donateButton.background-color': '#fcbf47',
+      'floating-chat.donateButton.text-color': '#323842'
+    });
+  </script>
 
 </body>
 </html>
