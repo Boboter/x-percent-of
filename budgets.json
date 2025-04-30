@@ -1,0 +1,27 @@
+[
+    {
+        "name" : "US military spending (2024)",
+        "budget" : 997000000000.00,
+        "source" : "https://de.statista.com/statistik/daten/studie/157935/umfrage/laender-mit-den-hoechsten-militaerausgaben/"
+    },
+    {
+       "name" : "US top 1% net worth (Q4 2024)",
+       "budget" : 52200000000000,
+       "source" : "https://fred.stlouisfed.org/series/WFRBST01134"
+    },
+    {
+        "name" : "global football transfer spending (2024)",
+        "budget" : 10960000000,
+        "source" : "https://de.statista.com/statistik/daten/studie/382052/umfrage/transfer-ausgaben-weltweit-profifussball/"
+    },
+    {
+        "name" : "global advertisement spending (2024)",
+        "budget" : 998190000000,
+        "source" : "https://de.statista.com/prognosen/1465136/entwicklung-der-werbeausgaben-weltweit"
+    },
+    {
+        "name": "net income of an EU employee (2024)",
+        "budget": 25000,
+        "source": "https://de.statista.com/themen/293/durchschnittseinkommen/"
+      }
+]

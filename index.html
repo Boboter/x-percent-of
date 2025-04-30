@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>What Could Be Done With...</title>
+  <style>
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: white;
+        opacity: 0.95;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fdfdfd;
+      color: #222;
+    }
+
+    body {
+        --c: gainsboro;     /* grid line color */
+        --d: 1em;            /* grid cell size */
+        --l: 1px;            /* line thickness */
+        --o: calc(0.5 * var(--l));
+
+        background:
+            /* vertical + horizontal lines */
+            conic-gradient(from 90deg at var(--l) var(--l), 
+                transparent 25%, var(--c) 0%) 
+            calc(-1 * var(--o)) calc(-1 * var(--o)) / var(--d) var(--d),
+
+            /* main diagonal */
+            linear-gradient(45deg, 
+                transparent calc(50% - var(--o)), 
+                var(--c) 0 calc(50% + var(--o)), transparent 0) 
+            0 0 / calc(2 * var(--d)) calc(2 * var(--d)),
+
+            /* secondary diagonal */
+            linear-gradient(-45deg, 
+                transparent calc(50% - var(--o)), 
+                var(--c) 0 calc(50% + var(--o)), transparent 0) 
+            0 0 / calc(2 * var(--d)) calc(2 * var(--d));
+    }
+
+    .inline-query {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 2em;
+        font-weight: bold;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 30px;
+        line-height: 1.3;
+    }
+
+    .inline-query .custom-select {
+        font-size: 1rem; /* Reset inherited 2em */
+        font-weight: normal;
+        padding: 6px 28px 6px 12px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20,50 70,100 120,50' fill='none' stroke='%23555' stroke-width='15'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 14px;
+        appearance: none;
+        cursor: pointer;
+        vertical-align: middle;
+    }
+
+    .custom-select:focus{
+        border-color: #2D88FF;
+    }
+
+    .small-select {
+      width: 100px;
+    }
+
+    .wide-select {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .output {
+      margin-top: 30px;
+      font-size: 1.2em;
+    }
+
+    .source {
+      margin-top: 10px;
+      font-size: 0.8em;
+      color: #555;
+    }
+
+    .source a {
+      color: #555;
+      text-decoration: underline;
+    }
+
+    ul {
+      margin-top: 20px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 12px;
+      line-height: 1.4em;
+    }
+
+    li a {
+      text-decoration: underline;
+      font-size: 0.95em;
+      color: #0066cc;
+    }
+
+    .or-divider h2 {
+      color: #888;
+      letter-spacing: 2px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 2.5em;
+      margin: 60px 0 20px;
+    }
+
+    .closing-message {
+        margin-top: 80px;
+        text-align: center;
+        font-size: 1.2em;
+        color: #444;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6em;
+    }
+
+    .about-section {
+        margin-top: 60px;
+        text-align: center;
+        font-size: 0.95em;
+        color: #444;
+    }
+
+    #aboutToggle {
+        background: none;
+        border: none;
+        font-size: 1em;
+        cursor: pointer;
+        color: #0066cc;
+        text-decoration: underline;
+    }
+
+    #aboutContent {
+        margin-top: 15px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.5em;
+        color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="inline-query">
+    <span>What could be done with</span>
+    <select id="percentRange" class="custom-select small-select">
+      <option value="0.1">0.1%</option>
+      <option value="0.5">0.5%</option>
+      <option value="1" selected>1%</option>
+      <option value="5">5%</option>
+      <option value="10">10%</option>
+      <option value="25">25%</option>
+      <option value="50">50%</option>
+      <option value="100">100%</option>
+    </select>
+    <span>of</span>
+    <select id="budgetSelect" class="custom-select wide-select"></select>
+    <span>?</span>
+  </div>
+
+  <div class="output">
+    <strong>That equals:</strong>
+    <div id="calculatedValue">–</div>
+    <div class="source" id="sourceLine">–</div>
+  </div>
+
+  <div class="output" id="needsBreakdown">
+    <h2>That could provide:</h2>
+    <ul id="needsList"></ul>
+  </div>
+
+  <div class="output or-divider">
+    <h2>OR</h2>
+  </div>
+
+  <div class="output" id="luxuryBreakdown">
+    <h2>You could instead buy:</h2>
+    <ul id="luxuryList"></ul>
+  </div>
+
+  <div class="output closing-message">
+    <p>
+      <em>Don't guilt-trip yourself to change.</em><br />
+      <strong>Change the system instead.</strong>
+    </p>
+  </div>
+
+  <div class="about-section">
+    <button id="aboutToggle">About this page ▾</button>
+    <div id="aboutContent" style="display: none;">
+      <p>
+        This page was created as part of a university project, aiming to combine technical development
+        with a socially relevant message. The goal is to offer perspective on large-scale spending by
+        contrasting it with real-world needs.
+      </p>
+      <p>
+        It's not meant to guilt individuals, but to illustrate systemic imbalances in global priorities.
+      </p>
+    </div>
+  </div>
+
+
+
+  <script>
+    const budgetSelect = document.getElementById('budgetSelect');
+    const percentRange = document.getElementById('percentRange');
+    const calculatedValue = document.getElementById('calculatedValue');
+    const sourceLine = document.getElementById('sourceLine');
+    const needsList = document.getElementById('needsList');
+    const luxuryList = document.getElementById('luxuryList');
+
+    let budgets = [];
+    let needs = [];
+    let luxuries = [];
+
+    Promise.all([
+      fetch('budgets.json').then(res => res.json()),
+      fetch('needs.json').then(res => res.json()),
+      fetch('luxury.json').then(res => res.json())
+    ]).then(([loadedBudgets, loadedNeeds, loadedLuxuries]) => {
+      budgets = loadedBudgets;
+      needs = loadedNeeds;
+      luxuries = loadedLuxuries;
+
+      budgets.forEach((item, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = item.name;
+        budgetSelect.appendChild(option);
+      });
+
+      update();
+    });
+
+    function update() {
+      if (budgets.length === 0 || needs.length === 0 || luxuries.length === 0) return;
+
+      const selected = budgets[budgetSelect.value];
+      const percent = parseFloat(percentRange.value);
+      const available = selected.budget * (percent / 100);
+
+      calculatedValue.textContent = `${available.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0
+      })}`;
+
+      sourceLine.innerHTML = `Source: <a href="${selected.source}" target="_blank" rel="noopener noreferrer">${selected.source}</a>`;
+
+      // Humanitarian needs
+      needsList.innerHTML = "";
+      needs.forEach(need => {
+        const count = Math.floor(available / need.unit_price_usd);
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${count.toLocaleString()} ${need.unit}</strong> — ${need.name} (<a href="${need.donate_link}" target="_blank">donate</a>)`;
+        needsList.appendChild(li);
+      });
+
+      // Luxury alternatives
+      luxuryList.innerHTML = "";
+      luxuries.forEach(item => {
+        const count = Math.floor(available / item.unit_price_usd);
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${count.toLocaleString()} ${item.unit}</strong> — ${item.name}`;
+        luxuryList.appendChild(li);
+      });
+
+    document.getElementById("aboutToggle").addEventListener("click", () => {
+        const content = document.getElementById("aboutContent");
+        const button = document.getElementById("aboutToggle");
+        const isVisible = content.style.display === "block";
+        content.style.display = isVisible ? "none" : "block";
+        button.textContent = isVisible ? "About this page ▾" : "About this page ▴";
+    });
+    }
+
+    budgetSelect.addEventListener('change', update);
+    percentRange.addEventListener('change', update);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+[
+    {
+      "name": "Superyacht (120 meters)",
+      "unit_price_usd": 300000000,
+      "unit": "yachts"
+    },
+    {
+      "name": "Private spaceflight seat (Blue Origin)",
+      "unit_price_usd": 28000000,
+      "unit": "flights"
+    },
+    {
+      "name": "Gulfstream G700 Private Jet",
+      "unit_price_usd": 75000000,
+      "unit": "jets"
+    },
+    {
+      "name": "Premier League football club",
+      "unit_price_usd": 5000000000,
+      "unit": "clubs"
+    },
+    {
+      "name": "Pink Star Diamond",
+      "unit_price_usd": 71000000,
+      "unit": "diamonds"
+    }
+  ]
+  

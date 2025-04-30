@@ -1,0 +1,93 @@
+[
+    {
+      "name": "Hot meal for refugees",
+      "unit_price_usd": 0.20,
+      "unit": "meals",
+      "description": "Provision of a nutritious meal in a humanitarian crisis setting.",
+      "organization": "UN World Food Programme",
+      "donate_link": "https://www.wfp.org/donate",
+      "source": "https://www.reuters.com/world/asia-pacific/un-slash-rations-rohingya-refugees-by-half-6-per-month-official-says-2025-03-05/"
+    },
+    {
+      "name": "Clean water access (per person)",
+      "unit_price_usd": 6.50,
+      "unit": "people",
+      "description": "Solar-powered water pumps providing clean water to entire communities.",
+      "organization": "Innovation: Africa",
+      "donate_link": "https://www.innoafrica.org/donate",
+      "source": "https://en.wikipedia.org/wiki/Innovation%3A_Africa"
+    },
+    {
+      "name": "One year of primary education",
+      "unit_price_usd": 55.00,
+      "unit": "children",
+      "description": "Annual cost for basic education in low-income countries.",
+      "organization": "UNESCO Global Education Coalition",
+      "donate_link": "https://www.globalpartnership.org/donate",
+      "source": "https://www.worldbank.org/en/topic/education/overview"
+    },
+    {
+      "name": "Insecticide-treated mosquito net",
+      "unit_price_usd": 6.00,
+      "unit": "nets",
+      "description": "Protects families from malaria for multiple years.",
+      "organization": "Against Malaria Foundation",
+      "donate_link": "https://www.againstmalaria.com/donate.aspx",
+      "source": "https://www.againstmalaria.com/DistributionCosts"
+    },
+    {
+      "name": "Deworming treatment",
+      "unit_price_usd": 0.50,
+      "unit": "treatments",
+      "description": "Deworming tablets that improve child health and school attendance.",
+      "organization": "Evidence Action – Deworm the World",
+      "donate_link": "https://www.evidenceaction.org/donate/",
+      "source": "https://www.evidenceaction.org/dewormtheworld/"
+    },
+    {
+      "name": "Vitamin A supplement",
+      "unit_price_usd": 1.00,
+      "unit": "doses",
+      "description": "Prevents blindness and reduces child mortality risk.",
+      "organization": "Helen Keller Intl",
+      "donate_link": "https://www.hki.org/get-involved/donate/",
+      "source": "https://www.givewell.org/charities/Helen-Keller-International"
+    },
+    {
+      "name": "School supplies for a child",
+      "unit_price_usd": 25.00,
+      "unit": "children",
+      "description": "Covers basic school materials and uniforms.",
+      "organization": "Save the Children",
+      "donate_link": "https://www.savethechildren.org/us/ways-to-help",
+      "source": "https://www.savethechildren.org/us/what-we-do/global-programs/education"
+    },
+    {
+      "name": "Build a community water well",
+      "unit_price_usd": 5000.00,
+      "unit": "wells",
+      "description": "Provides clean water access for entire villages.",
+      "organization": "charity: water",
+      "donate_link": "https://www.charitywater.org/donate",
+      "source": "https://www.charitywater.org/our-work"
+    },
+    {
+      "name": "Solar-powered light for rural households",
+      "unit_price_usd": 20.00,
+      "unit": "lights",
+      "description": "Replaces kerosene lamps and enables night-time studying.",
+      "organization": "SolarAid",
+      "donate_link": "https://solar-aid.org/donate/",
+      "source": "https://solar-aid.org/impact/"
+    },
+    {
+      "name": "Plant a tree for reforestation",
+      "unit_price_usd": 1.00,
+      "unit": "trees",
+      "description": "Helps restore degraded land and fight climate change.",
+      "organization": "Eden Reforestation Projects",
+      "donate_link": "https://edenprojects.org/donate/",
+      "source": "https://edenprojects.org/projects/"
+    }
+  ]
+  
