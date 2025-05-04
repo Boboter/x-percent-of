@@ -4,39 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What Could Be Done With...</title>
+
+  <!-- Favicon & App Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://boboter.github.io/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://boboter.github.io/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://boboter.github.io/img/favicon-16x16.png">
+  <link rel="manifest" href="https://boboter.github.io/img/site.webmanifest">
+  <link rel="shortcut icon" href="https://boboter.github.io/img/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --c: gainsboro;
-      --d: 1em;
-      --l: 1px;
-      --o: calc(0.5 * var(--l));
+      --bg: #f8f9fb;
+      --text: #222;
+      --highlight: #2D88FF;
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
       max-width: 800px;
       margin: 40px auto;
       padding: 20px;
-      background-color: #fdfdfd;
-      color: #222;
-      background:
-        conic-gradient(from 90deg at var(--l) var(--l), transparent 25%, var(--c) 0%)
-          calc(-1 * var(--o)) calc(-1 * var(--o)) / var(--d) var(--d),
-        linear-gradient(45deg, transparent calc(50% - var(--o)), var(--c) 0 calc(50% + var(--o)), transparent 0)
-          0 0 / calc(2 * var(--d)) calc(2 * var(--d)),
-        linear-gradient(-45deg, transparent calc(50% - var(--o)), var(--c) 0 calc(50% + var(--o)), transparent 0)
-          0 0 / calc(2 * var(--d)) calc(2 * var(--d));
+      background: linear-gradient(135deg, #ffffff 0%, #f3f4f7 100%);
+      color: var(--text);
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: white;
-      opacity: 0.95;
-      pointer-events: none;
-      z-index: -1;
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .home-icon img {
+      height: 64px;
     }
 
     .inline-query {
@@ -99,24 +103,6 @@
       line-height: 1.5em;
       color: #555;
     }
-    .back-button-container {
-      text-align: center;
-      margin-top: 60px;
-    }
-    .back-button {
-      display: inline-block;
-      background-color: #2D88FF;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1em;
-      transition: background-color 0.2s ease;
-    }
-    .back-button:hover {
-      background-color: #1b6cd8;
-    }
 
     @media (max-width: 600px) {
       .inline-query {
@@ -132,11 +118,16 @@
       }
       .output { font-size: 1em; }
       ul { padding-left: 16px; }
-      .back-button { width: 90%; font-size: 1em; padding: 12px; }
     }
   </style>
 </head>
 <body>
+  <header class="header-bar">
+    <a href="https://boboter.github.io" class="home-icon" title="Back to main page">
+      <img src="https://boboter.github.io/img/logo.png" alt="Logo">
+    </a>
+  </header>
+
   <div class="inline-query">
     <span>What could be done with</span>
     <select id="percentRange" class="custom-select small-select">
@@ -187,10 +178,6 @@
       <p>This page was created as part of a university project, aiming to combine technical development with a socially relevant message. The goal is to offer perspective on large-scale spending by contrasting it with real-world needs.</p>
       <p>It's not meant to guilt individuals, but to illustrate systemic imbalances in global priorities.</p>
     </div>
-  </div>
-
-  <div class="back-button-container">
-    <a href="https://boboter.github.io" class="back-button">← Back to main page</a>
   </div>
 
   <script>
